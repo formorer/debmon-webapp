@@ -7,7 +7,9 @@ sub startup {
 
   # Router
   my $r = $self->routes;
-  my $config = $self->plugin('Config', {file  => '/etc/debmonweb.conf'});
+  if (-e '/etc/debmonweb.conf') {
+    my $config = $self->plugin('Config', {file  => '/etc/debmonweb.conf'});
+  }
   # Normal route to controller
   $r->get('/')->to('example#welcome');
 }
