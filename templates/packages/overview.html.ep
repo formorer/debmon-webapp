@@ -1,0 +1,26 @@
+% layout 'default';
+% title 'Available packages';
+
+% foreach my $dist (sort(keys( %{$packagedata}))) {
+<table class="table table-bordered table-hover table-condensed table-striped">
+<caption><h4>Packages in <%= $dist %></h4></caption>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+<th>Architectures</th>
+</tr>
+</thead>
+<tbody>
+% foreach my $package (keys( %{$packagedata->{$dist}} )) {
+<tr>
+<td><a href="<%= url_for("/packages/$dist/$package") %>">
+<%= $package %></td>
+<td><%= $packagedata->{$dist}->{$package}->{Version} %></td>
+<td><%= join(", ", sort( @{ $packagedata->{$dist}->{$package}->{Architectures} })) %></td>
+% }
+</tr>
+</tbody>
+</table>
+% }
+
