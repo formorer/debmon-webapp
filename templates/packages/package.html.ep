@@ -18,7 +18,3 @@
     <dt>Architectures</dt>
     <dd><%= join(", ", sort(@{$packagedata->{$dist}->{$package}->{Architectures}})) %>
 </dl>
-
-%= dumper $packagedata
-</tbody>
-</table>

@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<title><%= title %></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/debmon.css" rel="stylesheet">
 		<style type="text/css">
 			body {
 				padding-top: 60px;
@@ -35,30 +36,23 @@
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
-		</div>
+      </div>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-			  </ul>
+      <div class="container-fluid">
+         <div class="row-fluid">
+            <div class="span3">
+               <div class="sidebar-nav navigation">
+                  <ul class="nav nav-list">
+                     % foreach my $entry (@{ $config->{menu} }) {
+                       % if ( $entry->{type} eq 'header') {
+                         <li class="nav-header"><%= $entry->{name} %></li>
+                         % } elsif ( $entry->{type} eq 'int' ) {
+                         <li><a href="<%= url_for($entry->{target}) %>"><%= $entry->{name} %></a></li>
+                         % } elsif ( $entry->{type} eq 'ext' ) {
+                         <li><a href="<%= $entry->{target} %>"><%= $entry->{name} %></a></li>
+                       %}
+                     %}
+                  </ul>
 		  </div><!--/.well -->
 	  </div><!--/span-->
 	  <div class="span9">
@@ -72,9 +66,9 @@
   </footer>
 
 	 </div><!--/.fluid-container-->
-	
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+
+		<script src="/js/jquery.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>
 <!-- vim: set ts=3 sw=3: --> 
