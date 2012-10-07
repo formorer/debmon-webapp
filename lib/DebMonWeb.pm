@@ -7,11 +7,14 @@ sub startup {
 
   # Router
   my $r = $self->routes;
-  if (-e '/etc/debmonweb.conf') {
-    my $config = $self->plugin('Config', {file  => '/etc/debmonweb.conf'});
-  }
+  my $configfile = -e '/etc/debmonweb.conf' ? '/etc/debmonweb.conf' :
+  'debmonweb.conf';
+
+  my $config = $self->plugin('Config', {file  => $configfile});
   # Normal route to controller
-  $r->get('/')->to('example#welcome');
+  $r->get('/')->to('static#home')->name('home');
+  $r->get('/packages')->to('packages#overview')->name('packageoverview');
+  $r->get('/packages/:dist/:package')->to('packages#package')->name('package');
 }
 
 1;
