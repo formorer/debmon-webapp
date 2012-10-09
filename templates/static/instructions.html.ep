@@ -1,0 +1,75 @@
+% layout 'default';
+% title 'Instructions';
+
+<div class="page-header">
+<h1>Debian Stable (squeeze)</h1>
+</div>
+To use debmon with squeeze you need to add the following lines to your
+<code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
+<p>
+<pre>
+deb http://backports.debian.org/debian-backports squeeze-backports main
+deb http://debmon.org/debmon debmon-squeeze main
+</pre>
+</p>
+<p>
+Afterwards you can install packages with the following commands:
+</p>
+<p>
+<pre>
+$ apt-get update
+$ apt-get install <package>
+</pre>
+</p>
+
+<div class="page-header">
+<h1>Debian Testing (wheezy)</h1>
+</div>
+
+To use debmon with wheezy you need to add the following line to your
+<code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
+
+<p>
+<pre>
+deb http://debmon.org/debmon debmon-wheezy main
+</pre>
+</p>
+<p>
+Afterwards you can install packages with the following commands:
+</p>
+<p>
+<pre>
+$ apt-get update
+$ apt-get install <package>
+</pre>
+</p>
+
+<div class="page-header">
+<h1>Importing the archive key</h1>
+</div>
+
+Unless you import the archive key apt will complain about the repository. To
+get rid of this warning you have two options. You can either install the
+<code>debmon-keyring-package</code> or install the key by hand:
+
+<p>
+<pre>
+curl http://debmon.org/debmon/repo.key 2>/dev/null |apt-key add - 
+OK
+</pre>
+</p>
+
+The key is signed with the key BC7D020A (Alexander Wirt <formorer@debian.org>)
+if you want to check to trustpath to a Debian Developer.
+
+<p>
+<pre>
+gpg --list-sig 29D662D2
+pub   2048R/29D662D2 2012-10-03
+uid                  debmon.org (debmon.org repository signing key) <contact@debmon.org>
+sig 3        29D662D2 2012-10-03  debmon.org (debmon.org repository signing key) <contact@debmon.org>
+sig          BC7D020A 2012-10-09  Alexander Wirt <formorer@debian.org>
+sub   2048R/575BA6B9 2012-10-03
+sig          29D662D2 2012-10-03  debmon.org (debmon.org repository signing key) <contact@debmon.org>
+</pre>
+</p>
