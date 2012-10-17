@@ -17,8 +17,8 @@ sub startup {
   $r->get('/instructions')->to('static#instructions')->name('instructions');
   $r->get('icingadoc')->to('static#icingadoc')->name('icingadoc');
   $r->get('IcingaIdoutilsIcingaWebInstallation')->to('static#IcingaIdoutilsIcingaWebInstallation')->name('IcingaIdoutilsIcingaWebInstallation');
+  $r->get('contributing')->to('static#contributing')->name('contributing');
   $r->get('/packages')->to('packages#overview')->name('packageoverview');
   $r->get('/packages/:dist/:package')->to('packages#package')->name('package');
 }
-
 1;
