@@ -1,0 +1,28 @@
+% layout 'default';
+% title 'Contributing';
+
+<h2>Contributing to debmon</h2>
+
+<h3>Who</h3>
+<p>
+If you are interested in contributing please contact us as contact@debmon.org
+
+<h3>How to upload</h3>
+<p>
+Add the following lines to your dput.cf
+<pre>
+[debmon]
+login           = repository
+fqdn            = debmon.org
+method          = scp
+incoming        = /srv/repository/incoming
+</pre>
+Afterwards <code>dput debmcon *.changes</code> should work.
+</p>
+
+<p>
+Please don't upload the <code>orig.tar.gz</code> twice use the
+<code>-sd</code> switch for <code>dpkg-buildpackage</code> to exclude the
+<code>orig.tar.gz</code>. If you need to include the <code>orig.tar.gz</code>
+use <code>-sa</code>.
+</p>
