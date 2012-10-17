@@ -11,6 +11,7 @@ sub startup {
   'debmonweb.conf';
 
   my $config = $self->plugin('Config', {file  => $configfile});
+  my $piwik =  $self->plugin('Piwik');
   # Normal route to controller
   $r->get('/')->to('static#home')->name('home');
   $r->get('/instructions')->to('static#instructions')->name('instructions');
