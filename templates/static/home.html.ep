@@ -1,7 +1,21 @@
 % layout 'default';
-% title 'Welcome';
-<h2><%= $message %></h2>
-This page was generated from the template "templates/examlcome.html.ep"
-and the layout "templates/layouts/default.html.ep",
-<a href="<%== url_for %>">click here</a> to reload the page or
-<a href="/index.html">here</a> to move forward to a static page.
+% title 'Home';
+<div class="page-header">
+<h1>The Debian Monitoring Project</h1>
+</div>
+<h3>Introduction</h3>
+<p>
+The goal of the Debian Monitoring Project is to create a single source for
+all packages and information about monitoring with Nagios/Icinga/Shinken on
+Debian systems. We try to collect and maintain packages and documentation for
+the whole Nagios/Icinga ecosystem.
+</p>
+<p>
+Packages on debmon are done by experienced packagers (usually the same they
+mantain them on debian) and the documentation is also reviewed by the people
+that created the packages to ensure the best possible quality for everything
+distributed on debmon.
+<h3>News</h3>
+<p>
+Nothing yet.
+</p>
