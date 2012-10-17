@@ -17,7 +17,8 @@
 <td><a href="<%= url_for("/packages/$dist/$package") %>">
 <%= $package %></td>
 <td><%= $packagedata->{$dist}->{$package}->{Version} %></td>
-<td><%= join(", ", sort( @{ $packagedata->{$dist}->{$package}->{Architectures} })) %></td>
+<td><%= join(", ", sort ( keys ( %{ { map { $_ => 1 } @{
+$packagedata->{$dist}->{$package}->{Architectures} } } } )))  %></td>
 % }
 </tr>
 </tbody>
