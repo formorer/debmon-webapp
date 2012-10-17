@@ -1,0 +1,105 @@
+% layout 'default';
+% title 'Icinga ';
+
+<div class="page-header">
+<h1>Installation of Icinga, idoutils and Icinga-Web</h1>
+</div>
+<p>
+This page describes how to install Icinga, Icinga-Web and idoutils on Debian. 
+To use it you have to enable the debmon repository as described in
+%= link_to Instructions => 'instructions'
+The documentation was copied from the <a
+href="https://wiki.icinga.org/display/howtos/Setting+up+Icinga+Web+on+Debian">icinga
+wiki</a> with friendly permission of its author(s).
+</p>
+<p>
+<h3>General</h3>
+<p>
+What will you get once Icinga Web using this guide is installed?
+<ul>
+<li>Icinga, idoutils, Icinga Class  and Icinga Web (the alternative frontend
+to Icinga)</li>
+</ul>
+</p>
+<h3>Prerequisites</h3>
+<p>
+To use idotuils you need an installed Database system, currently <%= link_to
+'http://www.postgresql.org' => begin %>Postgresql<% end %> and <%=
+link_to 'http://www.mysql.org' => begin %>MySQL<% end %>.
+If you want to use Postgresql a version >= 9.1 is recommended. You can obtain
+it from <%= link_to 'http://backports.debian.org' => begin %>Debian Backports<% end %>.
+<h3>README.Debian</h3>
+<p>
+Debian specific documentation for the packages is in
+<code>/usr/share/doc/$packagename/README.Debian</code>. Please read it if you
+encounter any problems.
+</p>
+<h3>Package Installation</h3>
+If you followed the
+Instructions => 'instructions'
+installation should be easy:
+<i>for MySQL</i>
+<pre>
+# apt-get install libdbd-mysql mysql-client
+# apt-get install icinga icinga-doc icinga-web nagios-plugins
+</pre>
+<i>for Postgresql</i>
+<pre>
+# apt-get install libdbd-pgsql postgresql-client
+# apt-get install icinga icinga-doc icinga-web nagios-plugins
+</pre>
+<div class="alert alert-info">
+<span class="label label-important">Important</span>
+Please install your datebase before installing the icinga packages.
+</div>
+
+<h3>External Commands</h3>
+If you want to add comments or any other commands from the webfrontend to the
+Icinga core you have to enable external commands. The package will ask you on
+installation time to enable them. If you missed to say "yes", execute
+<code>dpkg-reconfigure icinga-common</code>.
+
+<h3>IDOUtils configuration</h3>
+<p>
+To enable the module copy
+<code>/usr/share/doc/icinga-idoutils/examples/idoutils.cfg-sample</code> to
+<code>/etc/icinga/modules/idoutils.cfg</code>. If you have done that you have
+to restart icinga: <code>service icinga restart</code>. If thats done enable
+ido2db:
+<pre>
+sed -i -e 's/IDO2DB=no/IDO2DB=yes/' /etc/default/icinga
+</pre>
+</p>
+
+<h3>Accessing icinga-web and icinga-classic</h3>
+<p>
+If you have done everything right you can access icinga-classic via
+<code>http://$yourhost/icinga</code>. The username is <i>icingaadmin</i> and
+the password is the one you provided during package installation.
+</p>
+<p>
+icinga-web is accessable via <code>http://$yourhost/icinga-web/</code> with
+the username <i>root</i> and the password your provided.
+</p>
+
+<h3>Changing your passwords</h3>
+<p>
+Changing passwords can be done with the following commands:
+
+<p>
+<h4>icinga-classic</h4>
+<pre>
+# dpkg-reconfigure icinga-cgi
+</pre>
+or
+<pre>
+# httpasswd /etc/icinga/htpasswd.users icingaadmin
+</pre>
+</p>
+
+<h4>icinga-web</h4>
+<p>
+<pre>
+dpkg-reconfigure icinga-web
+</pre>
+</p>

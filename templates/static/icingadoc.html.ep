@@ -1,0 +1,20 @@
+% layout 'default';
+% title 'Icinga ';
+
+<div class="page-header">
+<h1>Icinga Documentation</h1>
+</div>
+<p>
+This page collects all icinga related documentation. To use them you have to
+enable the debmon repository as documented in
+%= link_to Instructions => 'instructions'
+</p>
+<p>
+<dl>
+<dt>
+%= link_to 'Icinga+Idoutils+Icingaweb' => 'IcingaIdoutilsIcingaWebInstallation'
+</dt>
+<dd>This howto describes how to install Icinga, Idoutils and the new
+Icinga-Web Frontend.</dd>
+</dl>
+</p>
