@@ -28,6 +28,8 @@ use <code>-sa</code>.
 </p>
 
 <h3>Website</h3>
+<p>
 The source of debmon is available via github:
 <%= link_to 'https://github.com/formorer/debmon-webapp' => begin %>https://github.com/formorer/debmon-webapp<% end %>
+</p>
 Patchs und pull-requests are welcome.
