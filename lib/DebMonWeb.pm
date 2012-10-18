@@ -18,6 +18,8 @@ sub startup {
   $r->get('icingadoc')->to('static#icingadoc')->name('icingadoc');
   $r->get('IcingaIdoutilsIcingaWebInstallation')->to('static#IcingaIdoutilsIcingaWebInstallation')->name('IcingaIdoutilsIcingaWebInstallation');
   $r->get('contributing')->to('static#contributing')->name('contributing');
+  $r->get('mailinglists')->to('static#mailinglists')->name('mailinglists');
+
   $r->get('/packages')->to('packages#overview')->name('packageoverview');
   $r->get('/packages/:dist/:package')->to('packages#package')->name('package');
 }

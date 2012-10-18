@@ -17,7 +17,7 @@ fqdn            = debmon.org
 method          = scp
 incoming        = /srv/repository/incoming
 </pre>
-Afterwards <code>dput debmcon *.changes</code> should work.
+Afterwards <code>dput debmon *.changes</code> should work.
 </p>
 
 <p>
@@ -26,3 +26,8 @@ Please don't upload the <code>orig.tar.gz</code> twice use the
 <code>orig.tar.gz</code>. If you need to include the <code>orig.tar.gz</code>
 use <code>-sa</code>.
 </p>
+
+<h3>Website</h3>
+The source of debmon is available via github:
+<%= link_to 'https://github.com/formorer/debmon-webapp' => begin %>https://github.com/formorer/debmon-webapp<% end %>
+Patchs und pull-requests are welcome.
