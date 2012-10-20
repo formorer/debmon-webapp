@@ -15,7 +15,18 @@
 		</style>
 	</head>
    <!-- Piwik -->
-   %= piwik_tag
+   <script type="text/javascript">
+      var pkBaseURL = (("https:" == document.location.protocol) ?
+            "https://piwik.snow-crash.org/" : "http://piwik.snow-crash.org/");
+      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js'
+               itype='text/javascript'%3E%3C/script%3E"));
+      </script><script type="text/javascript">
+      try {
+         var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+         piwikTracker.trackPageView();
+         piwikTracker.enableLinkTracking();
+      } catch( err ) {}
+      </script><noscript><p><img src="http://piwik.snow-crash.org/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
    <!-- End Piwik Tracking Code -->
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
