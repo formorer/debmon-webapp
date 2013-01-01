@@ -10,9 +10,9 @@ sub process {
   my $json  = Mojo::JSON->new;
   my $payload  = $json->decode($payload_json);
   if ($json->error) {
-      $self->render('Could not decode payload: ' . $json->error);
+      return $self->render('Could not decode payload: ' . $json->error);
   } else {
-      $self->render('KTHXBYE');
+      return $self->render('KTHXBYE');
   }
 }
 
