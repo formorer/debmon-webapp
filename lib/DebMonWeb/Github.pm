@@ -1,4 +1,4 @@
-package DebMonWeb::Static;
+package DebMonWeb::Github;
 use Mojo::Base 'Mojolicious::Controller';
 use Mojo::JSON;
 
