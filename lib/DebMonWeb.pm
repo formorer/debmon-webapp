@@ -14,6 +14,7 @@ sub startup {
   my $piwik =  $self->plugin('Piwik');
   # Normal route to controller
   $r->get('/')->to('static#home')->name('home');
+  $r->get('github')->('github#process')->name('github');
   $r->get('/instructions')->to('static#instructions')->name('instructions');
   $r->get('icingadoc')->to('static#icingadoc')->name('icingadoc');
   $r->get('IcingaIdoutilsIcingaWebInstallation')->to('static#IcingaIdoutilsIcingaWebInstallation')->name('IcingaIdoutilsIcingaWebInstallation');
