@@ -1,6 +1,7 @@
 package DebMonWeb::Github;
 use Mojo::Base 'Mojolicious::Controller';
 use Mojo::JSON;
+use Mojo::Home;
 use Proc::Reliable;
 
 sub process {
@@ -38,12 +39,14 @@ sub _process_json {
         $event = 'pull-request'; #just to be complete
     }
     $self->app->log->info("Received event \"$event\"");
+    my $home = Mojo::Home->new;
+    my $homedir = $home->detect;
 
     if ($config->{github_events} =~ /$event/) {
         my $p = Proc::Reliable->new();
         if ( $config->{github_command} ) {
             $p->want_single_list(1);
-            my $output = $p->run($config->{github_command});
+            my $output = $p->run("cd $homedir; " . $config->{github_command});
             $self->app->log->info("github command triggered: $output");
             return $output;
         } else {
