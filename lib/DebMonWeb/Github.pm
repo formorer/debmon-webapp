@@ -46,7 +46,7 @@ sub _process_json {
         my $p = Proc::Reliable->new();
         if ( $config->{github_command} ) {
             $p->want_single_list(1);
-            my $output = $p->run("cd $homedir; " . $config->{github_command});
+            my $output = $p->run("cd $homedir/../; " . $config->{github_command});
             $self->app->log->info("github command triggered: $output");
             return $output;
         } else {
