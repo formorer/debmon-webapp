@@ -45,9 +45,14 @@ sub _process_json {
     if ($config->{github_events} =~ /$event/) {
         my $p = Proc::Reliable->new();
         if ( $config->{github_command} ) {
-            $p->want_single_list(1);
-            my $output = $p->run("cd $homedir/../; " . $config->{github_command});
-            $self->app->log->info("github command triggered: $output");
+            my $output = '';
+            foreach my $cmd ( @{ $config->{github_command} } ) {
+
+                $p->want_single_list(1);
+                $output .= $p->run("cd $homedir/../; " .
+                    $config->{github_command}) . "\n";
+                $self->app->log->info("github command triggered: $output");
+            }
             return $output;
         } else {
             $self->app->log->error("No github command defined");
