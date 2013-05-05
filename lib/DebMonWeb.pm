@@ -18,6 +18,11 @@ sub startup {
     $self->log( Mojo::Log->new(path => $config->{logfile}, level => $loglevel) );
   }
 
+  # set passphrase if defined in configfile
+  if ($config->{secret}) {
+    $self->secret($config->{secret});
+  }
+
   # Normal route to controller
   $r->get('/')->to('static#home')->name('home');
   $r->post('github')->to('github#process')->name('github');
