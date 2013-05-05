@@ -11,7 +11,13 @@ sub startup {
   'debmonweb.conf';
 
   my $config = $self->plugin('Config', {file  => $configfile});
-  my $piwik =  $self->plugin('Piwik');
+  #my $piwik =  $self->plugin('Piwik');
+
+  if ($config->{logfile}) {
+    my $loglevel = $config->{loglevel} || 'info';
+    $self->log( Mojo::Log->new(path => $config->{logfile}, level => $loglevel) );
+  }
+
   # Normal route to controller
   $r->get('/')->to('static#home')->name('home');
   $r->post('github')->to('github#process')->name('github');
