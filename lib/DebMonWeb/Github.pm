@@ -49,8 +49,7 @@ sub _process_json {
             foreach my $cmd ( @{ $config->{github_command} } ) {
 
                 $p->want_single_list(1);
-                $output .= $p->run("cd $homedir/../; " .
-                    $config->{github_command}) . "\n";
+                $output .= $p->run("cd $homedir/../; " . $cmd )   . "\n";
                 $self->app->log->info("github command triggered: $output");
             }
             return $output;
