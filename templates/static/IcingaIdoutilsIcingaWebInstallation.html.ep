@@ -69,6 +69,7 @@ ido2db:
 <pre>
 sed -i -e 's/IDO2DB=no/IDO2DB=yes/' /etc/default/icinga
 </pre>
+and start the ido2db daemon with <code>service ido2db start</code>.
 </p>
 
 <h3>Accessing icinga-web and icinga-classic</h3>
