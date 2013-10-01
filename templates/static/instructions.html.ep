@@ -2,14 +2,15 @@
 % title 'Instructions';
 
 <div class="page-header">
-<h1>Debian Stable (squeeze)</h1>
+<h1>Debian Stable (wheezy)</h1>
 </div>
-To use debmon with squeeze you need to add the following lines to your
+
+To use debmon with wheezy you need to add the following line to your
 <code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
+
 <p>
 <pre>
-deb http://backports.debian.org/debian-backports squeeze-backports main
-deb http://debmon.org/debmon debmon-squeeze main
+deb http://debmon.org/debmon debmon-wheezy main
 </pre>
 </p>
 <p>
@@ -23,15 +24,16 @@ $ apt-get install <package>
 </p>
 
 <div class="page-header">
-<h1>Debian Testing (wheezy)</h1>
+<h1>Debian Oldstable (squeeze)</h1>
 </div>
 
-To use debmon with wheezy you need to add the following line to your
+To use debmon with squeeze you need to add the following lines to your
 <code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
 
 <p>
 <pre>
-deb http://debmon.org/debmon debmon-wheezy main
+deb http://backports.debian.org/debian-backports squeeze-backports main
+deb http://debmon.org/debmon debmon-squeeze main
 </pre>
 </p>
 <p>
