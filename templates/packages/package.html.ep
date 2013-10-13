@@ -1,6 +1,8 @@
 % layout 'default';
 % title 'Available packages';
 
+% use List::MoreUtils qw(uniq);
+
 <h2>Package <%= $package %> in <%= $dist %> (
 <%= $packagedata->{$dist}->{$package}->{Version} %>)</h2>
 <p class="lead"><%= $packagedata->{$dist}->{$package}->{Description} %></p>
@@ -16,5 +18,5 @@
     <dt>Maintainer</dt>
     <dd><%= $packagedata->{$dist}->{$package}->{Maintainer} %></dd>
     <dt>Architectures</dt>
-    <dd><%= join(", ", sort(@{$packagedata->{$dist}->{$package}->{Architectures}})) %>
+    <dd><%= join(", ", uniq ( sort(@{$packagedata->{$dist}->{$package}->{Architectures}}))) %>
 </dl>
