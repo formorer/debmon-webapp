@@ -56,7 +56,7 @@ get rid of this warning you have two options. You can either install the
 
 <p>
 <pre>
-curl http://debmon.org/debmon/repo.key 2>/dev/null |apt-key add - 
+wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
 OK
 </pre>
 </p>
