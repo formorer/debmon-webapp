@@ -3,8 +3,7 @@
 
 % use List::MoreUtils qw(uniq);
 
-<h2>Package <%= $package %> in <%= $dist %> (
-<%= $packagedata->{$dist}->{$package}->{Version} %>)</h2>
+<h2>Package <%= $package %> in <%= $dist %> (<%= $packagedata->{$dist}->{$package}->{Version} %>)</h2>
 <p class="lead"><%= $packagedata->{$dist}->{$package}->{Description} %></p>
 <pre class="well"><%= $packagedata->{$dist}->{$package}->{body} %></pre>
 <p>
