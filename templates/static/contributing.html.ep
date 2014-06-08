@@ -5,7 +5,7 @@
 
 <h3>Who</h3>
 <p>
-If you are interested in contributing please contact us as contact@debmon.org
+If you are interested in contributing please contact us at contact@debmon.org
 
 <h3>How to upload</h3>
 <p>
@@ -32,4 +32,4 @@ use <code>-sa</code>.
 The source of debmon is available via github:
 <%= link_to 'https://github.com/formorer/debmon-webapp' => begin %>https://github.com/formorer/debmon-webapp<% end %>
 </p>
-Patchs und pull-requests are welcome.
+Patches und pull-requests are welcome.
