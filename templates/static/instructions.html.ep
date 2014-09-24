@@ -19,7 +19,7 @@ Afterwards you can install packages with the following commands:
 <p>
 <pre>
 $ apt-get update
-$ apt-get install <package>
+$ apt-get install &lt;package&gt;
 </pre>
 </p>
 
@@ -42,7 +42,7 @@ Afterwards you can install packages with the following commands:
 <p>
 <pre>
 $ apt-get update
-$ apt-get install <package>
+$ apt-get install &lt;package&gt;
 </pre>
 </p>
 
@@ -56,7 +56,7 @@ get rid of this warning you have two options. You can either install the
 
 <p>
 <pre>
-wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
+$ wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
 OK
 </pre>
 </p>
@@ -66,7 +66,7 @@ if you want to check the trustpath to a Debian Developer.
 
 <p>
 <pre>
-gpg --list-sig 29D662D2
+$ gpg --list-sig 29D662D2
 pub   2048R/29D662D2 2012-10-03
 uid                  debmon.org (debmon.org repository signing key) <contact@debmon.org>
 sig 3        29D662D2 2012-10-03  debmon.org (debmon.org repository signing key) <contact@debmon.org>
