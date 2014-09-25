@@ -11,8 +11,13 @@
     <dt>Depends</dt>
     <dd><%= $packagedata->{$dist}->{$package}->{Depends} %></dd>
     <dt>Homepage</dt>
-    <dd><a href="<%= $packagedata->{$dist}->{$package}->{Homepage} %>"><%=
+    <dd>
+% if ( $packagedata->{$dist}->{$package}->{Homepage} ) {
+    <a href="<%= $packagedata->{$dist}->{$package}->{Homepage} %>"><%=
     $packagedata->{$dist}->{$package}->{Homepage} %> </a>
+% } else {
+    &nbsp;
+% }
     </dd>
     <dt>Maintainer</dt>
     <dd><%= $packagedata->{$dist}->{$package}->{Maintainer} %></dd>
