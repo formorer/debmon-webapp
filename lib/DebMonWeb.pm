@@ -20,7 +20,7 @@ sub startup {
 
   # set passphrase if defined in configfile
   if ($config->{secret}) {
-    $self->secrets([$config->{secret}];
+    $self->secrets([$config->{secret}]);
   }
 
   # Normal route to controller
