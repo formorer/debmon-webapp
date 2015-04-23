@@ -27,7 +27,7 @@ Afterwards you can install packages with the following commands:
 <p>
 <pre>
 $ apt-get update
-$ apt-get install &lt;package&gt;
+$ apt-get install &lt;package(s)&gt;
 </pre>
 </p>
 
