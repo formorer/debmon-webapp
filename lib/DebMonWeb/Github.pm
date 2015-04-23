@@ -11,7 +11,6 @@ sub process {
   my $payload  = decode($payload_json);
   my $output = $self->_process_json ( $payload );
   $self->render(text => "triggered hook, output: $output");
-  }
 }
 
 sub _process_json {
