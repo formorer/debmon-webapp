@@ -1,6 +1,6 @@
 package DebMonWeb::Github;
 use Mojo::Base 'Mojolicious::Controller';
-use Mojo::JSON qw (decode);
+use Mojo::JSON qw (decode_json);
 use Mojo::Home;
 use Proc::Reliable;
 
@@ -8,7 +8,7 @@ sub process {
   my $self = shift;
 
   my $payload_json = $self->param('payload');
-  my $payload  = decode($payload_json);
+  my $payload  = decode_json($payload_json);
   my $output = $self->_process_json ( $payload );
   $self->render(text => "triggered hook, output: $output");
 }
