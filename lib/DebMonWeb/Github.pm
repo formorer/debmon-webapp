@@ -8,16 +8,9 @@ sub process {
   my $self = shift;
 
   my $payload_json = $self->param('payload');
-  warn $payload_json;
-
-  my $json  = Mojo::JSON->new;
-  my $payload  = $json->decode($payload_json);
-  if ($json->error) {
-      $self->app->log->debug('Could not decode payload: ' . $json->error);
-      $self->render(text => 'Could not decode payload: ' . $json->error);
-  } else {
-      my $output = $self->_process_json ( $payload );
-      $self->render(text => "triggered hook, output: $output");
+  my $payload  = decode($payload_json);
+  my $output = $self->_process_json ( $payload );
+  $self->render(text => "triggered hook, output: $output");
   }
 }
 
