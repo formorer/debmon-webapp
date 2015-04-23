@@ -1,6 +1,6 @@
 package DebMonWeb::Github;
 use Mojo::Base 'Mojolicious::Controller';
-use Mojo::JSON;
+use Mojo::JSON qw (decode);
 use Mojo::Home;
 use Proc::Reliable;
 
