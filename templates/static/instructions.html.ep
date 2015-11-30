@@ -18,7 +18,7 @@ Some packages, like <em>icingaweb2</em>, might have dependencies from Wheezy bac
 </p>
 <p>
 <pre>
-deb http://http.debian.net/debian wheezy-backports main
+deb http://httpredir.debian.org/debian wheezy-backports main
 </pre>
 </p>
 <p>
