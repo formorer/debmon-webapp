@@ -14,11 +14,11 @@ deb http://debmon.org/debmon debmon-jessie main
 </pre>
 </p>
 <p>
-Some packages, like <em>icingaweb2</em>, might have dependencies from Wheezy backports, add the repo if a dependency problem occurs.
+Some packages, like <em>icingaweb2</em>, might have dependencies from jessie backports, add the repo if a dependency problem occurs.
 </p>
 <p>
 <pre>
-deb http://httpredir.debian.org/debian wheezy-backports main
+deb http://httpredir.debian.org/debian jessie-backports main
 </pre>
 </p>
 <p>
