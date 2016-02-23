@@ -12,7 +12,7 @@
 </tr>
 </thead>
 <tbody>
-% foreach my $package (keys( %{$packagedata->{$dist}} )) {
+% foreach my $package (sort(keys( %{$packagedata->{$dist}} ))) {
 <tr>
 <td><a href="<%= url_for("/packages/$dist/$package") %>">
 <%= $package %></td>
