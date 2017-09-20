@@ -2,7 +2,39 @@
 % title 'Instructions';
 
 <div class="page-header">
-<h1>Debian Stable (jessie)</h1>
+<h1>Debian Stable (stretch)</h1>
+</div>
+
+To use debmon with stretch you need to add the following line to your
+<code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
+
+<p>
+<pre>
+deb http://debmon.org/debmon debmon-stretch main
+</pre>
+</p>
+<p>
+Some packages, like <em>icingaweb2</em>, might have dependencies from stretch backports, add the repo if a dependency problem occurs.
+</p>
+<p>
+<pre>
+deb http://httpredir.debian.org/debian stretch-backports main
+</pre>
+</p>
+<p>
+Afterwards you can install packages with the following commands:
+</p>
+<p>
+<pre>
+$ apt-get update
+$ apt-get install &lt;package&gt;
+</pre>
+</p>
+
+
+
+<div class="page-header">
+<h1>Debian Oldstable (jessie)</h1>
 </div>
 
 To use debmon with jessie you need to add the following line to your
@@ -14,43 +46,11 @@ deb http://debmon.org/debmon debmon-jessie main
 </pre>
 </p>
 <p>
-Some packages, like <em>icingaweb2</em>, might have dependencies from jessie backports, add the repo if a dependency problem occurs.
-</p>
-<p>
-<pre>
-deb http://httpredir.debian.org/debian jessie-backports main
-</pre>
-</p>
-<p>
-Afterwards you can install packages with the following commands:
-</p>
-<p>
-<pre>
-$ apt-get update
-$ apt-get install &lt;package&gt;
-</pre>
-</p>
-
-
-
-<div class="page-header">
-<h1>Debian Oldstable (wheezy)</h1>
-</div>
-
-To use debmon with wheezy you need to add the following line to your
-<code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
-
-<p>
-<pre>
-deb http://debmon.org/debmon debmon-wheezy main
-</pre>
-</p>
-<p>
 Some packages, like <em>icingaweb2</em>, might have dependencies from Wheezy backports, add the repo if a dependency problem occurs.
 </p>
 <p>
 <pre>
-deb http://http.debian.net/debian wheezy-backports main
+deb http://http.debian.net/debian jessie-backports main
 </pre>
 </p>
 <p>
@@ -60,29 +60,6 @@ Afterwards you can install packages with the following commands:
 <pre>
 $ apt-get update
 $ apt-get install &lt;package(s)&gt;
-</pre>
-</p>
-
-<div class="page-header">
-<h1>Debian Oldoldstable (squeeze)</h1>
-</div>
-
-To use debmon with squeeze you need to add the following lines to your
-<code>sources.list</code> or to a file in <code>/etc/apt/sources.list.d/</code>.
-
-<p>
-<pre>
-deb http://backports.debian.org/debian-backports squeeze-backports main
-deb http://debmon.org/debmon debmon-squeeze main
-</pre>
-</p>
-<p>
-Afterwards you can install packages with the following commands:
-</p>
-<p>
-<pre>
-$ apt-get update
-$ apt-get install &lt;package&gt;
 </pre>
 </p>
 
